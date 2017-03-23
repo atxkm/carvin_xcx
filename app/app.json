@@ -1,6 +1,10 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/history/history",
+    "pages/index/vehicle",
+    "pages/index/accident",
+    "pages/index/insurance"
   ],
   "window": {
     "backgroundTextStyle": "light",

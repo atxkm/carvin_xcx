@@ -22,7 +22,10 @@
   <view class="div_input_vin">
     <input placeholder="输入17位vin码查询" text="number" placeholder-style="color:e1e1e1" class="input_vin" />
   </view>
+
   <view class="what_do">汽车库能查什么?</view>
+
   <button class="btn_start_request">开始查询</button>
+
   <view class="show_text_index">查汽车库，买放心车车！</view>
 </view>
