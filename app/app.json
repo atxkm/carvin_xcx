@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f1f1f1",
+    "navigationBarTitleText": "汽车库车辆征信",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#f1f1f1",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icon/tab_index.png",
+      "selectedIconPath": "icon/tab_index_h.png"
+    }, {
+      "pagePath": "pages/hello/hello",
+      "text": "我的查询",
+      "iconPath": "icon/tab_more.png",
+      "selectedIconPath": "icon/tab_more_h.png"
+    }]
+  }
+}

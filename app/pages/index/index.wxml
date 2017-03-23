@@ -1,0 +1,31 @@
+<view>
+  <view class="select_type">
+    <view class="select_acc_container" bindtap="clickCar">
+      <view class="select_align">
+        <image src="../../icon/car_s.png" class="select_acc" mode="scaleToFill"></image>
+        <image src="../../icon/select_arrow.png" class="select_arrow" mode="scaleToFill" hidden="{{select_car}}"></image>
+      </view>
+    </view>
+    <view class="select_acc_container" bindtap="clickAcc">
+      <view class="select_align">
+        <image src="../../icon/acc_s.png" class="select_acc" mode="scaleToFill"></image>
+        <image src="../../icon/select_arrow.png" class="select_arrow" mode="scaleToFill" hidden="{{select_acc}}"></image>
+      </view>
+    </view>
+    <view class="select_acc_container" bindtap="clickEnsure">
+      <view class="select_align">
+        <image src="../../icon/ensure_s.png" class="select_acc" mode="scaleToFill"></image>
+        <image src="../../icon/select_arrow.png" class="select_arrow" mode="scaleToFill" hidden="{{select_ensure}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="div_input_vin">
+    <input placeholder="输入17位vin码查询" text="number" placeholder-style="color:e1e1e1" class="input_vin" />
+  </view>
+
+  <view class="what_do">汽车库能查什么?</view>
+
+  <button class="btn_start_request">开始查询</button>
+
+  <view class="show_text_index">查汽车库，买放心车车！</view>
+</view>
