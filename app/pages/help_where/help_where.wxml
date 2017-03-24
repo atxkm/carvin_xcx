@@ -14,8 +14,7 @@
     </view>
   </view>
   <view class="input-wrap">
-    <input type="number" placeholder="输入17位vin码查询" bindinput="inputNumber"/>
-    <view class="input-length">{{ inputLength + '位'}}</view>
+    <input type="text" placeholder="输入17位vin码查询" />
   </view>
   <view class="weui-flex help-wrap">
     <view class="weui-flex__item">汽车库能查什么?</view>

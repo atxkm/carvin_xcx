@@ -2,9 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/history/history",
-    "pages/index/vehicle",
-    "pages/index/accident",
-    "pages/index/insurance"
+    "pages/vehicle/vehicle",
+    "pages/accident/accident",
+    "pages/insurance/insurance"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,7 +21,7 @@
       "iconPath": "icon/tab_index.png",
       "selectedIconPath": "icon/tab_index_h.png"
     }, {
-      "pagePath": "pages/hello/hello",
+      "pagePath": "pages/history/history",
       "text": "我的查询",
       "iconPath": "icon/tab_more.png",
       "selectedIconPath": "icon/tab_more_h.png"

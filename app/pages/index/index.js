@@ -3,52 +3,31 @@
 var app = getApp();
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
-    select_car: false,
-    select_acc: true,
-    select_ensure: true
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    queryType: 1,
+    inputLength: 0,
   },
   onLoad: function() {
-    console.log('onLoad')
+    // console.log('onLoad')
     var that = this
       //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo) {
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      })
-    })
+      // app.getUserInfo(function(userInfo) {
+      //   //更新数据
+      //   that.setData({
+      //     userInfo: userInfo
+      //   })
+      // });
   },
-
-  clickCar: function() {
+  selectQueryType: function(e) {
+    let queryType = e.currentTarget.dataset.queryType;
     this.setData({
-      select_car: false,
-      select_acc: true,
-      select_ensure: true
-    })
+      queryType: queryType
+    });
   },
-
-  clickAcc: function() {
+  inputNumber: function(e) {
+    let length = e.detail.value.length;
     this.setData({
-      select_car: true,
-      select_acc: false,
-      select_ensure: true
-    })
-  },
-
-  clickEnsure: function() {
-    this.setData({
-      select_car: true,
-      select_acc: true,
-      select_ensure: false
-    })
+      inputLength: length
+    });
   }
-
 });
