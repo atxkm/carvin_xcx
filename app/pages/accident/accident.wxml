@@ -1,31 +1,49 @@
 <view>
-  <view class="select_type">
-    <view class="select_acc_container" bindtap="clickCar">
-      <view class="select_align">
-        <image src="../../icon/car_s.png" class="select_acc" mode="scaleToFill"></image>
-        <image src="../../icon/select_arrow.png" class="select_arrow" mode="scaleToFill" hidden="{{select_car}}"></image>
-      </view>
+  <view class="car-info">
+    <text>车架号：{{ carInfo.vinCode }}</text>
+    <text>车型：{{ carInfo.carModel }}</text>
+    <text>发动机号：{{ carInfo.engineNumber }}</text>
+    <text>制造日期：{{ carInfo.manufactureDate }}</text>
+  </view>
+  <view wx:if="{{ accidentType == 0 }}">
+    <view class="query-result">
+      <text class="title">查询结果</text>
+      <text class="desc">未查询到该车事故记录！</text>
+      <image src="../../icon/0.jpg"></image>
     </view>
-    <view class="select_acc_container" bindtap="clickAcc">
-      <view class="select_align">
-        <image src="../../icon/acc_s.png" class="select_acc" mode="scaleToFill"></image>
-        <image src="../../icon/select_arrow.png" class="select_arrow" mode="scaleToFill" hidden="{{select_acc}}"></image>
-      </view>
-    </view>
-    <view class="select_acc_container" bindtap="clickEnsure">
-      <view class="select_align">
-        <image src="../../icon/ensure_s.png" class="select_acc" mode="scaleToFill"></image>
-        <image src="../../icon/select_arrow.png" class="select_arrow" mode="scaleToFill" hidden="{{select_ensure}}"></image>
-      </view>
+    <view class="accident-desc">
+      <text class="tip">提示: 未查询该车事故仅代表该车未在保险机构登记事故记录，' + '具体确认还需要详细检查车况。
+      </text>
     </view>
   </view>
-  <view class="div_input_vin">
-    <input placeholder="输入17位vin码查询" text="number" placeholder-style="color:e1e1e1" class="input_vin" />
+  <view wx:if="{{ accidentType == 1 }}">
+    <view class="query-result">
+      <text class="title">查询结果</text>
+      <text class="desc">该车疑似事故</text>
+      <image src="../../icon/1.jpg"></image>
+    </view>
+    <view class="accident-desc">
+      <text class="title">疑似事故</text>
+      <block wx:for="accidentResult">
+        <text>{{ item.acciddate }}，车架号为{{ item.vincode }}的车辆在{{ item.accidcity }}发生{{ item.accidtype }}</text>
+        <text class="view-btn">查看事故车照片>></text>
+      </block>
+    </view>
   </view>
-
-  <view class="what_do">汽车库能查什么?</view>
-
-  <button class="btn_start_request">开始查询</button>
-
-  <view class="show_text_index">查汽车库，买放心车车！</view>
+  <view wx:if="{{ accidentType == 2 }}">
+    <view class="query-result">
+      <text class="title">查询结果</text>
+      <text class="desc">该车为事故车</text>
+      <image src="../../icon/2.jpg"></image>
+    </view>
+    <view class="accident-desc">
+      <text class="title">事故描述</text>
+      <text>事故类型：{{ accidentResult.accidtype }}</text>
+      <text>出险时间：{{ accidentResult.acciddate }}</text>
+      <text>出险地点：{{ accidentResult.accidcity }}</text>
+      <text>处置方式：拍卖</text>
+      <text class="desc">车辆记录描述：{{ accidentResult.remark }}</text>
+      <text class="view-btn">查看事故车照片>></text>
+    </view>
+  </view>
 </view>

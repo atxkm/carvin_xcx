@@ -21,5 +21,6 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+  host: 'http://m.qicheku.com'
 });

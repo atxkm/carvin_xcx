@@ -1,31 +1,24 @@
 <view>
-  <view class="select_type">
-    <view class="select_acc_container" bindtap="clickCar">
-      <view class="select_align">
-        <image src="../../icon/car_s.png" class="select_acc" mode="scaleToFill"></image>
-        <image src="../../icon/select_arrow.png" class="select_arrow" mode="scaleToFill" hidden="{{select_car}}"></image>
-      </view>
-    </view>
-    <view class="select_acc_container" bindtap="clickAcc">
-      <view class="select_align">
-        <image src="../../icon/acc_s.png" class="select_acc" mode="scaleToFill"></image>
-        <image src="../../icon/select_arrow.png" class="select_arrow" mode="scaleToFill" hidden="{{select_acc}}"></image>
-      </view>
-    </view>
-    <view class="select_acc_container" bindtap="clickEnsure">
-      <view class="select_align">
-        <image src="../../icon/ensure_s.png" class="select_acc" mode="scaleToFill"></image>
-        <image src="../../icon/select_arrow.png" class="select_arrow" mode="scaleToFill" hidden="{{select_ensure}}"></image>
-      </view>
+  <view class="car-info">
+    <text>车架号：{{ carInfo.vincode }}</text>
+    <text>车型：{{ carInfo.carmodel }}</text>
+    <text>发动机号：{{ carInfo.carengine || '-' }}</text>
+    <text>使用性质：{{ carInfo.isoperate }}</text>
+    <text>过户次数：{{ carInfo.transfertimes }}</text>
+    <text>制造日期：{{ carInfo.carproductdate }}</text>
+    <text>出险次数：{{ carInfo.insuranceCount }}</text>
+    <text>理赔金额总计：{{ carInfo.moneyCount }}</text>
+  </view>
+  <view class="insurance-info">
+    <view wx:for="{{ insuranceInfo }}">
+      <text class="title">出险记录{{ index + 1 }}</text>
+      <text>保单类型：{{ item.instype }}</text>
+      <text>理赔年度：{{ item.instime }}</text>
+      <text>出险地点：{{ item.insarea }}</text>
+      <text>出险经过：{{ item.insdesc }}</text>
+      <text>出险原因：{{ item.insreason }}</text>
+      <text>受损部位：{{ item.insbody }}</text>
+      <text>理赔金额：{{ item.insprice }}</text>
     </view>
   </view>
-  <view class="div_input_vin">
-    <input placeholder="输入17位vin码查询" text="number" placeholder-style="color:e1e1e1" class="input_vin" />
-  </view>
-
-  <view class="what_do">汽车库能查什么?</view>
-
-  <button class="btn_start_request">开始查询</button>
-
-  <view class="show_text_index">查汽车库，买放心车车！</view>
 </view>

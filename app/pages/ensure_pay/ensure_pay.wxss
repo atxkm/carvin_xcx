@@ -1,0 +1,21 @@
+.title {
+  margin: 90rpx 0 0 30rpx;
+  font-size: 34rpx;
+}
+.query-number {
+  padding: 80rpx 0 90rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.money {
+  font-size: 32rpx;
+  text-align: center;
+}
+.pay-btn {
+  margin-top: 80rpx;
+}
+.pay-btn button {
+  width: 280rpx;
+  font-size: 30rpx;
+}

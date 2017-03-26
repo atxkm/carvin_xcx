@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/history/history",
+    "pages/ensure_pay/ensure_pay",
     "pages/vehicle/vehicle",
     "pages/accident/accident",
     "pages/insurance/insurance"

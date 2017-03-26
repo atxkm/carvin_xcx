@@ -1,0 +1,14 @@
+<view class="ensure-pay-wrap">
+  <view class="title">
+    <text>您查询的车架号是：</text>
+  </view>
+  <view class="query-number">
+    <text>{{ queryNumber }}</text>
+  </view>
+  <view class="money">
+    <text>本次查询将需要您支付2元</text>
+  </view>
+  <view class="pay-btn">
+    <button type="primary" bindtap="goPay">进入微信支付</button>
+  </view>
+</view>

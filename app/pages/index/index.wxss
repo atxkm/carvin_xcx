@@ -39,15 +39,24 @@
 }
 .input-wrap input {
   height: 65rpx;
-  background: url(../../icon/query.jpg) no-repeat 20rpx center;
-  background-size: 30rpx;
-  text-indent: 55rpx;
+  padding-left: 60rpx;
+  font-size: 26rpx;
+}
+.input-wrap image {
+  position: absolute;
+  top: 16rpx;
+  left: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
 }
 .input-length {
   position: absolute;
-  top: 5rpx;
+  top: 12rpx;
   right: 10rpx;
-  font-size: 35rpx;
+  font-size: 26rpx;
+}
+.input-length.red {
+  color: #fe0000;
 }
 .help-wrap {
   padding: 30rpx 50rpx 85rpx;

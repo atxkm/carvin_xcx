@@ -1,1 +1,7 @@
 @import 'style/weui.wxss';
+.bold {
+  font-weight: bold;
+}
+.align-left {
+	text-align: left !important;
+}

@@ -1,82 +1,41 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
-
-.select_type {
-  margin-top: 100rpx;
-  display:flex;
-  flex-direction: row;
-  width:100%;
-  height:258rpx;
-}
-
-.select_acc_container {
-  width: 33%;
-  height: 258rpx;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.select_align{
-  width: 124rpx;
-  height: 258rpx;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 0 auto;
-}
-.select_acc {
-  width: 124rpx;
-  height: 164rpx;
-}
-
-.select_arrow{
-  width: 108rpx;
-  height: 48rpx;
-  margin-top: 46rpx;
-}
-
-.div_input_vin{
-  padding: 30rpx;
-  background: #ccc;
-  
-}
-
-.input_vin{
-  background: #fff;
-  padding: 10rpx;
-  font-size: 35rpx;
-}
-
-.what_do{
-  padding: 30rpx;
-  font-size: 25rpx; 
-}
-
-.btn_start_request{
-  width: 300rpx;
-}
-
-.show_text_index {
-  margin-top: 100rpx;
-  margin-left: 220rpx;
+.vin-info {
+  padding-top: 30rpx;
+  padding-left: 18rpx;
   font-size: 30rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+}
+.table {
+  width: 730rpx;
+  margin: 30rpx auto 0;
+  border-top: 1rpx solid #dadada;
+  border-left: 1rpx solid #dadada;
+  font-size: 30rpx;
+}
+.tr {
+  display: flex;
+  justify-content: space-around;
+}
+.td {
+  flex: 1;
+  border-bottom: 1rpx solid #dadada;
+  border-right: 1rpx solid #dadada;
+  text-align: center;
+  line-height: 68rpx;
+}
+.td.colspan-3 {
+  flex: 3;
+}
+.title {
+  margin: 75rpx 0 30rpx;
+  padding-left: 20rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.model-list-wrap {
+  padding: 0 10rpx;
+}
+.model-list {
+  font-size: 30rpx;
+  line-height: 34rpx;
 }
