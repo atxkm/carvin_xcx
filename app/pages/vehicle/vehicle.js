@@ -1,13 +1,11 @@
-//index.js
-//获取应用实例
 let app = getApp();
-let host = app.host;
-
+let config = app.config;
 
 Page({
   data: {},
   onLoad: function(e) {
-    let queryNumber = e.queryNumber;
+    // let queryNumber = e.queryNumber;
+    // console.log('queryNumber', queryNumber);
 
     // wx.request({
     //   url: host + '/carvin/vin/getVin',

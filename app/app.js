@@ -1,5 +1,8 @@
 //app.js
 App({
+  config: {
+    host: 'https://m.qicheku.com'
+  },
   onLaunch: function() {},
   getUserInfo: function(cb) {
     // var that = this
@@ -20,7 +23,6 @@ App({
     // }
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
   },
-  host: 'http://m.qicheku.com'
 });
