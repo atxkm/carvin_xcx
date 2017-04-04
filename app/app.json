@@ -5,7 +5,9 @@
     "pages/ensure_pay/ensure_pay",
     "pages/vehicle/vehicle",
     "pages/accident/accident",
-    "pages/insurance/insurance"
+    "pages/insurance/insurance",
+    "pages/help_what/help_what",
+    "pages/help_where/help_where"
   ],
   "window": {
     "backgroundTextStyle": "light",
