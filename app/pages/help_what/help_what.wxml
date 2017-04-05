@@ -1,25 +1,22 @@
-<view class="index-wrap">
-  <view class="weui-flex query-select-wrap">
-    <view class="{{ queryType == 1 ? 'weui-flex__item select-item checked':'weui-flex__item select-item' }}" bindtap="selectQueryType" data-query-type="1">
-      <image src="../../icon/vehicle.jpg" mode="aspectFit"></image>
-      <text>查车型</text>
-    </view>
-    <view class="{{ queryType == 2 ? 'weui-flex__item select-item checked':'weui-flex__item select-item' }}" bindtap="selectQueryType" data-query-type="2">
-      <image src="../../icon/accident.jpg" mode="aspectFit"></image>
-      <text>查事故</text>
-    </view>
-    <view class="{{ queryType == 3 ? 'weui-flex__item select-item checked':'weui-flex__item select-item' }}" bindtap="selectQueryType" data-query-type="3">
-      <image src="../../icon/insurance.jpg" mode="aspectFit"></image>
-      <text>查保险</text>
-    </view>
+<view>
+  <view class="head">
+    <text>汽车库能查什么?</text>
   </view>
-  <view class="input-wrap">
-    <input type="text" placeholder="输入17位vin码查询" />
+  <view class="block">
+    <text class="title">1、查车型</text>
+    <text class="content">输入17位车架号（VIN），可以查询车辆的精确款型、排放标准、发动机变速箱类型、出厂配置信息等，帮助您慧眼识车，避免被骗。</text>
   </view>
-  <view class="weui-flex help-wrap">
-    <view class="weui-flex__item">汽车库能查什么?</view>
-    <view class="weui-flex__item right">在哪儿能找到vin码?</view>
+  <view class="block">
+    <text class="title">2、查事故</text>
+    <text class="content">输入17位车架号（VIN），可以查询该车是否出过重大事故，包括重大碰撞事故、水淹车、火烧车、爆炸车等等。</text>
   </view>
-  <button type="primary" class="query-btn">开始查询</button>
-  <view class="tip">查汽车库，买放心车车！</view>
+  <view class="block">
+    <text class="title">3、查保险</text>
+    <text class="content">输入17位车架号（VIN），可以查询该车历年的保险记录，包括车损部位、理赔金额、出险经过等等。</text>
+  </view>
+  <view>
+    <button>
+      <navigator url="/pages/index/index" open-type="switchTab">开始查询</navigator>
+    </button>
+  </view>
 </view>

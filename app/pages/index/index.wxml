@@ -19,7 +19,9 @@
     <view class="{{ inputLength == 17 || inputLength == 0 ? 'input-length' : 'input-length red' }}">{{ inputLength + '位'}}</view>
   </view>
   <view class="weui-flex help-wrap">
-    <view class="weui-flex__item">汽车库能查什么?</view>
+    <view class="weui-flex__item">
+      <navigator url="/pages/help_what/help_what">汽车库能查什么?</navigator>
+    </view>
     <view class="weui-flex__item right">在哪儿能找到vin码?</view>
   </view>
   <button type="primary" class="query-btn" bindtap="startQuery">开始查询</button>
