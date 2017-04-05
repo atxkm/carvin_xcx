@@ -1,7 +1,7 @@
 const app = getApp();
 
 Page({
-  onLoad: function() {
+  onShow: function() {
     let _this = this;
     app.getOpenid(function(openid) {
       _this.getInfo(openid);
@@ -9,12 +9,18 @@ Page({
   },
   getInfo(openid) {
     let _this = this;
+    console.log(openid);
     wx.request({
       url: app.config.host + '/carvin/myquery/list',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: { openid: openid },
       success: function(res) {
+        console.log(res);
         res = res.data;
         _this.setInfo(res);
+      },
+      complete: function(res) {
+        console.log(res);
       }
     });
   },

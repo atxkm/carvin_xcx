@@ -1,3 +1,7 @@
+.no-result {
+  font-size: 30rpx;
+  text-align: center;
+}
 .history {
   padding-top: 30rpx;
 }
