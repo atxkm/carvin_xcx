@@ -1,0 +1,17 @@
+image {
+  display: block;
+  width: 127rpx;
+  height: 127rpx;
+  margin: 10rpx auto;
+}
+text {
+  display: block;
+  font-size: 30rpx;
+  text-align: center;
+}
+.title {
+  margin-top: 10rpx;
+}
+.wait {
+  margin-top: 10rpx;
+}

@@ -1,14 +1,14 @@
 <view class="index-wrap">
   <view class="weui-flex query-select-wrap">
-    <view class="{{ queryType == 1 ? 'weui-flex__item select-item checked' : 'weui-flex__item select-item' }}" bindtap="selectQueryType" data-query-type="1">
+    <view class="{{ queryType == 'vin' ? 'weui-flex__item select-item checked' : 'weui-flex__item select-item' }}" bindtap="selectQueryType" data-query-type="vin">
       <image src="../../icon/vehicle.jpg"></image>
       <text>查车型</text>
     </view>
-    <view class="{{ queryType == 2 ? 'weui-flex__item select-item checked' : 'weui-flex__item select-item' }}" bindtap="selectQueryType" data-query-type="2">
+    <view class="{{ queryType == 'accidVin' ? 'weui-flex__item select-item checked' : 'weui-flex__item select-item' }}" bindtap="selectQueryType" data-query-type="accidVin">
       <image src="../../icon/accident.jpg"></image>
       <text>查事故</text>
     </view>
-    <view class="{{ queryType == 3 ? 'weui-flex__item select-item checked' : 'weui-flex__item select-item' }}" bindtap="selectQueryType" data-query-type="3">
+    <view class="{{ queryType == 'insVin' ? 'weui-flex__item select-item checked' : 'weui-flex__item select-item' }}" bindtap="selectQueryType" data-query-type="insVin">
       <image src="../../icon/insurance.jpg"></image>
       <text>查保险</text>
     </view>
@@ -22,7 +22,9 @@
     <view class="weui-flex__item">
       <navigator url="/pages/help_what/help_what">汽车库能查什么?</navigator>
     </view>
-    <view class="weui-flex__item right">在哪儿能找到vin码?</view>
+    <view class="weui-flex__item right">
+      <navigator url="/pages/help_where/help_where">在哪儿能找到vin码?</navigator>
+    </view>
   </view>
   <button type="primary" class="query-btn" bindtap="startQuery">开始查询</button>
   <view class="tip">查汽车库，买放心车车！</view>

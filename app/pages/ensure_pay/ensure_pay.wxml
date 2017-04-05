@@ -9,6 +9,6 @@
     <text>本次查询将需要您支付2元</text>
   </view>
   <view class="pay-btn">
-    <button type="primary" bindtap="goPay">进入微信支付</button>
+    <button type="primary" bindtap="payment">进入微信支付</button>
   </view>
 </view>

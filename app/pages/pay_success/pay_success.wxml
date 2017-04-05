@@ -1,0 +1,5 @@
+<view class="ensure-pay-wrap">
+  <image src="../../icon/success.jpg"></image>
+  <text class="title">支付成功</text>
+  <text class="wait">正在查询中</text>
+</view>

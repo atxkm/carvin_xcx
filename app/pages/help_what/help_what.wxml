@@ -15,8 +15,8 @@
     <text class="content">输入17位车架号（VIN），可以查询该车历年的保险记录，包括车损部位、理赔金额、出险经过等等。</text>
   </view>
   <view>
-    <button>
-      <navigator url="/pages/index/index" open-type="switchTab">开始查询</navigator>
-    </button>
+    <navigator open-type="switchTab" url="/pages/index/index">
+      <button>开始查询</button>
+    </navigator>
   </view>
 </view>

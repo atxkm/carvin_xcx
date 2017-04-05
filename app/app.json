@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/history/history",
     "pages/ensure_pay/ensure_pay",
+    "pages/pay_success/pay_success",
     "pages/vehicle/vehicle",
     "pages/accident/accident",
     "pages/insurance/insurance",

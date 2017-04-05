@@ -1,44 +1,49 @@
 <view>
-  <view class="vin-info">
-    <view>
-      <text>车架号：{{ vinInfo.clsbdh }}</text>
-    </view>
-    <view>
-      <text>发动机号：{{ vinInfo.fdjh }}</text>
-    </view>
-    <view>
-      <text>车系：{{ vinInfo.clxh }}</text>
-    </view>
-    <view>
-      <text>制造日期：{{ vinInfo.clzzrq }}</text>
-    </view>
+  <view class="vin-info" wx:if="{{ vinInfo == 0 }}">
+    没有查询到这个VIN码，请检查输入是否正确。
   </view>
-  <view class="tab-wrap">
-    <view class="table">
-      <view class="tr">
-        <view class="td">发动机型号</view>
-        <view class="td">{{ vinInfo.engineName }}</view>
-        <view class="td">车身颜色</view>
-        <view class="td">{{ vinInfo.csys }}</view>
+  <view wx:else>
+    <view class="vin-info">
+      <view>
+        <text>车架号：{{ vinInfo.clsbdh }}</text>
       </view>
-      <view class="tr">
-        <view class="td">排气量</view>
-        <view class="td">{{ vinInfo.pl }}</view>
-        <view class="td">额定功率</view>
-        <view class="td">{{ vinInfo.gl }}</view>
+      <view>
+        <text>发动机号：{{ vinInfo.fdjh }}</text>
       </view>
-      <view class="tr">
-        <view class="td">变速箱</view>
-        <view class="td">{{ vinInfo.engineName }}</view>
-        <view class="td">燃油类型</view>
-        <view class="td">{{ vinInfo.engineName }}</view>
+      <view>
+        <text>车系：{{ vinInfo.clxh }}</text>
       </view>
-      <view class="tr">
-        <view class="td">排放标准</view>
-        <view class="td colspan-3 bold">{{ vinInfo.pfbz }}</view>
+      <view>
+        <text>制造日期：{{ vinInfo.clzzrq }}</text>
       </view>
-      <view class="tr">
-        <view class="td align-left">选配信息：{{ vinInfo.bz ? vinInfo.bz : ''}}</view>
+    </view>
+    <view class="tab-wrap">
+      <view class="table">
+        <view class="tr">
+          <view class="td">发动机型号</view>
+          <view class="td">{{ vinInfo.fdjh }}</view>
+          <view class="td">车身颜色</view>
+          <view class="td">{{ vinInfo.csys }}</view>
+        </view>
+        <view class="tr">
+          <view class="td">排气量</view>
+          <view class="td">{{ vinInfo.pl }}</view>
+          <view class="td">额定功率</view>
+          <view class="td">{{ vinInfo.gl }}</view>
+        </view>
+        <view class="tr">
+          <view class="td">变速箱</view>
+          <view class="td">{{ vinInfo.engineName }}</view>
+          <view class="td">燃油类型</view>
+          <view class="td">{{ vinInfo.engineName }}</view>
+        </view>
+        <view class="tr">
+          <view class="td">排放标准</view>
+          <view class="td colspan-3 bold">{{ vinInfo.pfbz }}</view>
+        </view>
+        <view class="tr">
+          <view class="td align-left">选配信息：{{ vinInfo.bz }}</view>
+        </view>
       </view>
     </view>
   </view>
@@ -46,8 +51,12 @@
     <view class="title">
       <text>车型解析</text>
     </view>
-    <view class="model-list-wrap">
-      <view class="model-list" wx:for="{{ carModelInfo }}">
+    <view class="model-list-wrap" wx:if="{{ carModelInfo == 0 && vinInfo != 0 }}">
+      暂时不能解析这个VIN码，车型国标码为{{vinInfo.clxh}}
+    </view>
+    <view class="model-list-wrap" wx:elif="{{ carModelInfo == 0 }}">无车型解析数据</view>
+    <view class="model-list-wrap" wx:else>
+      <view class="model-list" wx:for="{{ carModelInfo }}" wx:key="*this">
         <text>{{ item.brandName}} {{ item.seriesName }} {{ item.simpleName }} {{ item.newPrice }}</text>
       </view>
     </view>

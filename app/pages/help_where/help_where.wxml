@@ -1,3 +1,16 @@
-<view class="index-wrap">
-  
+<view>
+  <view class="head">
+    <text>帮助中心</text>
+  </view>
+  <view class="block">
+    <text class="title">什么是VIN码？</text>
+    <text class="content">车辆识别码（VIN）是一个特定的汽车识别代码，VIN是其英文Vehicle Ldentification Number的缩写。VIN作为汽车的指纹，就像我们每个人的身份证一样具有唯一性，没有两辆车有相同的VIN。VIN由17个字符（数字和大写字母）组成，其中包含了该车辆的生产厂家，日期，车型等信息。VIN可以用于车辆的各类信息查询。</text>
+  </view>
+  <view class="block">
+    <text class="title">VIN码哪里找</text>
+    <text class="content">查看车辆识别码的最简单的方法就是站在车外的驾驶员一侧，您便可以看到前挡风玻璃下方的一串17位编码。如果在前挡风玻璃下方无法找到VIN，您还可以打开驾驶员侧车门，在驾驶员一侧的中柱（也叫B柱）上看到。此外，您还可以在您的车辆行驶本和保险单上找到车辆识别码。</text>
+  </view>
+  <view>
+  	<image src="../../icon/where.jpg"></image>
+  </view>
 </view>

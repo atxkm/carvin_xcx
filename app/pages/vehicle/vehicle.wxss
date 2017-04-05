@@ -34,8 +34,8 @@
 }
 .model-list-wrap {
   padding: 0 10rpx;
+  font-size: 30rpx;
 }
 .model-list {
-  font-size: 30rpx;
   line-height: 34rpx;
 }
