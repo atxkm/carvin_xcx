@@ -6,6 +6,7 @@
     "pages/pay_success/pay_success",
     "pages/vehicle/vehicle",
     "pages/accident/accident",
+    "pages/accident_img/accident_img",
     "pages/insurance/insurance",
     "pages/help_what/help_what",
     "pages/help_where/help_where"

@@ -24,9 +24,9 @@
     </view>
     <view class="accident-desc">
       <text class="title">疑似事故</text>
-      <block wx:for="accidentResult">
-        <text>{{ item.acciddate }}，车架号为{{ item.vincode }}的车辆在{{ item.accidcity }}发生{{ item.accidtype }}</text>
-        <text class="view-btn">查看事故车照片>></text>
+      <block wx:for="{{ accidentResult }}" wx:key="*this">
+        <text>{{ item.acciddate || '未知日期' }}，车架号为{{ item.vincode }}的车辆在{{ item.accidcity || '未知地点' }}发生{{ item.accidtype || '未知事故' }}</text>
+        <navigator class="view-btn" url="{{ item.url }}">查看事故车照片>></navigator>
       </block>
     </view>
   </view>

@@ -1,0 +1,3 @@
+.accident_img image {
+  width: 100%;
+}

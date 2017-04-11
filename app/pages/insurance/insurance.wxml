@@ -1,24 +1,32 @@
 <view>
-  <view class="car-info">
-    <text>车架号：{{ carInfo.vincode }}</text>
-    <text>车型：{{ carInfo.carmodel }}</text>
-    <text>发动机号：{{ carInfo.carengine || '-' }}</text>
-    <text>使用性质：{{ carInfo.isoperate }}</text>
-    <text>过户次数：{{ carInfo.transfertimes }}</text>
-    <text>制造日期：{{ carInfo.carproductdate }}</text>
-    <text>出险次数：{{ carInfo.insuranceCount }}</text>
-    <text>理赔金额总计：{{ carInfo.moneyCount }}</text>
-  </view>
-  <view class="insurance-info">
-    <view wx:for="{{ insuranceInfo }}">
-      <text class="title">出险记录{{ index + 1 }}</text>
-      <text>保单类型：{{ item.instype }}</text>
-      <text>理赔年度：{{ item.instime }}</text>
-      <text>出险地点：{{ item.insarea }}</text>
-      <text>出险经过：{{ item.insdesc }}</text>
-      <text>出险原因：{{ item.insreason }}</text>
-      <text>受损部位：{{ item.insbody }}</text>
-      <text>理赔金额：{{ item.insprice }}</text>
+  <block wx:if="{{ carInfo }}">
+    <view class="car-info">
+      <text>车架号：{{ carInfo.vincode }}</text>
+      <text>车型：{{ carInfo.carmodel }}</text>
+      <text>发动机号：{{ carInfo.carengine || '-' }}</text>
+      <text>使用性质：{{ carInfo.isoperate }}</text>
+      <text>过户次数：{{ carInfo.transfertimes }}</text>
+      <text>制造日期：{{ carInfo.carproductdate }}</text>
+      <text>出险次数：{{ carInfo.insuranceCount }}</text>
+      <text>理赔金额总计：{{ carInfo.moneyCount }}</text>
     </view>
-  </view>
+    <view class="insurance-info">
+      <view wx:for="{{ insuranceInfo }}">
+        <text class="title">出险记录{{ index + 1 }}</text>
+        <text>保单类型：{{ item.instype }}</text>
+        <text>理赔年度：{{ item.instime }}</text>
+        <text>出险地点：{{ item.insarea }}</text>
+        <text>出险经过：{{ item.insdesc }}</text>
+        <text>出险原因：{{ item.insreason }}</text>
+        <text>受损部位：{{ item.insbody }}</text>
+        <text>理赔金额：{{ item.insprice }}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="car-info">
+      <text>车架号：{{ queryNumber }}</text>
+      <text>未查询到此车架号相关的保险信息</text>
+    </view>
+  </block>
 </view>

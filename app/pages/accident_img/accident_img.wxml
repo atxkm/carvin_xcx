@@ -1,0 +1,5 @@
+<view class="accident_img">
+  <block wx:for="{{ imgs }}" wx:key="*this">
+    <image src="{{ item }}"></image>
+  </block>
+</view>

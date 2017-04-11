@@ -3,17 +3,12 @@ const app = getApp();
 Page({
   onLoad: function(e) {
     let _this = this;
-
-    if (app.globalData.result) {
-      this.setInfo(app.globalData.result);
-
-    } else {
-      let queryNumber = e.query_number;
-      let outTradeNo = e.out_trade_no;
-      app.getOpenid(function(openid) {
-        _this.getInfo(queryNumber, outTradeNo, openid);
-      });
-    }
+    let queryNumber = e.query_number;
+    this.setData({ queryNumber: queryNumber });
+    let outTradeNo = e.out_trade_no;
+    app.getOpenid(function(openid) {
+      _this.getInfo(queryNumber, outTradeNo, openid);
+    });
   },
   getInfo: function(queryNumber, outTradeNo, openid) {
     let _this = this;
@@ -34,19 +29,22 @@ Page({
     if (res.code == 1) {
       res.result = JSON.parse(res.result);
       let insuranceInfo = res.result.insreult;
-      let carInfo = insuranceInfo[0];
-      carInfo.insuranceCount = insuranceInfo.length;
-      let moneyCount = 0;
-      insuranceInfo.forEach(item => {
-        let insurancePrice = item.insprice.substr(1).replace('元', '');
-        moneyCount += parseInt(insurancePrice);
-      });
-      carInfo.moneyCount = moneyCount;
 
-      this.setData({
-        carInfo: carInfo,
-        insuranceInfo: insuranceInfo
-      });
+      if (insuranceInfo) {
+        let carInfo = insuranceInfo[0];
+        carInfo.insuranceCount = insuranceInfo.length;
+        let moneyCount = 0;
+        insuranceInfo.forEach(item => {
+          let insurancePrice = item.insprice.substr(1).replace('元', '');
+          moneyCount += parseInt(insurancePrice);
+        });
+        carInfo.moneyCount = moneyCount;
+
+        this.setData({
+          carInfo: carInfo,
+          insuranceInfo: insuranceInfo
+        });
+      }
 
     } else {
       wx.showModal({

@@ -3,17 +3,11 @@ const app = getApp();
 Page({
   onLoad: function(e) {
     let _this = this;
-
-    if (app.globalData.result) {
-      this.setInfo(app.globalData.result);
-
-    } else {
-      let queryNumber = e.query_number;
-      let outTradeNo = e.out_trade_no;
-      app.getOpenid(function(openid) {
-        _this.getInfo(queryNumber, outTradeNo, openid);
-      });
-    }
+    let queryNumber = e.query_number;
+    let outTradeNo = e.out_trade_no;
+    app.getOpenid(function(openid) {
+      _this.getInfo(queryNumber, outTradeNo, openid);
+    });
   },
   getInfo(queryNumber, outTradeNo, openid) {
     let _this = this;
@@ -40,7 +34,7 @@ Page({
 
       let vinInfo = result.vininfo;
       if (vinInfo != 0) {
-        carInfo.vinCode = vinInfo.vincode;
+        carInfo.vinCode = vinInfo.clsbdh;
         carInfo.carModel = vinInfo.clxh;
         carInfo.engineNumber = vinInfo.fdjh;
         carInfo.manufactureDate = vinInfo.clzzrq;
@@ -58,7 +52,10 @@ Page({
         carInfo.engineNumber = '未查到';
         carInfo.manufactureDate = '未查到';
       }
-
+      // console.log(result.accreult);
+      result.accreult.forEach(item => {
+        item.url = `/pages/accident_img/accident_img?imgs=${item.accidimg}`;
+      });
       this.setData({
         accidentType: accidentType,
         carInfo: carInfo,

@@ -7,23 +7,13 @@
       <view class="date">
         <text>{{ historyItem[0].createdate }}</text>
       </view>
-      <view class="block" wx:for="{{ historyItem }}" wx:key="*this">
-        <view class="content" wx:if="{{ item.type == 'vin' }}" bindtap="navigatTo" data-type="vin" data-out-trade-no="{{ item.outTradeNo }}">
-          <text>VIN码：{{ item.result.vininfo.clsbdh }}</text>
-          <text>车型：{{ item.result.vininfo.clxh }}</text>
-          <text>报告类型：车型查询</text>
-          <text class="money">消费2元</text>
-        </view>
-        <view class="content" wx:elif="{{ item.type == 'accidVin' }}" bindtap="navigatTo" data-type="accidVin" data-out-trade-no="{{ item.outTradeNo }}">
-          <text>VIN码：{{ carInfo.vinCode }}</text>
-          <text>车型：{{ carInfo.carModel }}</text>
-          <text>报告类型：事故查询</text>
-          <text class="money">消费2元</text>
-        </view>
-        <view class="content" wx:else bindtap="navigatTo" data-type="insVin" data-out-trade-no="{{ item.outTradeNo }}">
-          <text>VIN码：{{ carInfo.vincode }}</text>
-          <text>车型：{{ carInfo.carmodel }}</text>
-          <text>报告类型：保险查询</text>
+      <view class="block" wx:for="{{ historyItem }}" wx:key="id">
+        <view class="content" bindtap="navigatTo" data-type="{{ item.type }}" data-out-trade-no="{{ item.outTradeNo }}" data-vin-code="{{ item.vincode }}">
+          <text>VIN码：{{ item.vincode }}</text>
+          <text>车型：{{ item.carModel }}</text>
+          <text wx:if="{{ item.type == 'vin' }}">报告类型：车型查询</text>
+          <text wx:elif="{{ item.type == 'accidVin' }}">报告类型：事故查询</text>
+          <text wx:else>报告类型：保险查询</text>
           <text class="money">消费2元</text>
         </view>
       </view>

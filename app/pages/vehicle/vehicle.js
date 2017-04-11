@@ -3,17 +3,12 @@ const app = getApp();
 Page({
   onLoad: function(e) {
     let _this = this;
+    let queryNumber = e.query_number;
+    let outTradeNo = e.out_trade_no;
 
-    if (app.globalData.result) {
-      this.setInfo(app.globalData.result);
-
-    } else {
-      let queryNumber = e.query_number;
-      let outTradeNo = e.out_trade_no;
-      app.getOpenid(function(openid) {
-        _this.getInfo(queryNumber, outTradeNo, openid);
-      });
-    }
+    app.getOpenid(function(openid) {
+      _this.getInfo(queryNumber, outTradeNo, openid);
+    });
   },
   getInfo: function(queryNumber, outTradeNo, openid) {
     let _this = this;
