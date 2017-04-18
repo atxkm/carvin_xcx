@@ -20,7 +20,7 @@ Page({
   },
   setInfo(res) {
     let list = this.data.bigResult = res.result;
-    let gruopJson = {};
+    let groupJson = {};
 
     list.forEach(item => {
       item.result = JSON.parse(item.result);
@@ -47,19 +47,35 @@ Page({
         item.carModel = result.insreult[0].carmodel;
       }
 
-      if (gruopJson[date]) {
-        gruopJson[date].push(item);
+      //按时间组集
+      if (groupJson[date]) {
+        groupJson[date].push(item);
       } else {
-        gruopJson[date] = [item];
+        groupJson[date] = [item];
       }
     });
 
-    let historyList = [];
-    for (let key in gruopJson) {
-      let item = gruopJson[key];
-      historyList.push(item);
+    //提取key值
+    var keyArr = [];
+    for (var key in groupJson) {
+      keyArr.push(key);
+      //将小集合按createtime排序
+      var items = groupJson[key];
+      items.sort(function(p, n) {
+        return p.createtime < n.createtime;
+      });
     }
-    
+    //将key值排序
+    keyArr.sort(function(p, n) {
+      return p < n;
+    });
+    //创建有序的list
+    let historyList = [];
+    for (var i = 0; i < keyArr.length; i++) {
+      var key = keyArr[i];
+      historyList.push(groupJson[key]);
+    }
+
     this.setData({ historyList: historyList });
   },
   navigatTo: function(e) {
