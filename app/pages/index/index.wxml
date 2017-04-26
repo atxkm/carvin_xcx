@@ -14,7 +14,7 @@
     </view>
   </view>
   <view class="input-wrap">
-    <input name="vinNumber" type="number" placeholder="输入17位vin码查询" bindinput="inputNumber" value="{{ queryNumber }}" />
+    <input name="vinNumber" type="text" placeholder="输入17位vin码查询" bindinput="inputNumber" value="{{ queryNumber }}" />
     <image src="../../icon/query.jpg"></image>
     <view class="{{ inputLength == 17 || inputLength == 0 ? 'input-length' : 'input-length red' }}">{{ inputLength + '位'}}</view>
   </view>
