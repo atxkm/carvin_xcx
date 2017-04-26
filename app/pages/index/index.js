@@ -1,8 +1,8 @@
 Page({
   data: {
     queryType: 'vin',
-    inputLength: 17,
-    queryNumber: 'LFV2A11G753133568',
+    inputLength: 0,
+    queryNumber: '',
   },
   selectQueryType: function(e) {
     let queryType = e.currentTarget.dataset.queryType;
